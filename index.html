@@ -3,9 +3,7 @@
 <head>
 <style>
 body {font-family: "Lato", sans-serif;}
-h.lucida {
-	font-family: "Lato", lucida handwriting;
-	}
+
 /* Style the tab */
 div.tab {
     overflow: hidden;
@@ -35,6 +33,13 @@ div.tab button.active {
     background-color: #ccc;
 }
 
+/*styling the time*/
+.timestyle{
+	font-family: "Lato", times new roman;
+	font-size: 15px;
+	text-align: right;
+	}
+
 /* Style the tab content */
 .tabcontent {
     display: none;
@@ -59,12 +64,28 @@ div.tab button.active {
 
 h1{
 font-family: "Lato", lucida handwriting;
+
+
 }
 </style>
 </head>
 <body background= 'grey back.png'>
 
-<h1 class="lucida">Welcome To My Website</h1>
+<header>
+<p id ='demo' class = "timestyle" style="float:right;"> demo </p>
+<h1>Welcome To My Website </h1>
+</header>
+
+<!--<header>
+<p id = 'demo' class = "timestyle" style="float:right;">Regular Text Goes Here</p>
+<h1>Welcom to my Website</h1>
+</header>-->
+
+<script>
+document.getElementById("demo").innerHTML = Date();
+</script>
+
+
 
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'Home')">About Me</button>
@@ -88,7 +109,7 @@ font-family: "Lato", lucida handwriting;
 <div id="Projects" class="tabcontent">
   <h3>Projects</h3>
   <p>Autonomous Car</p>
-	<iframe width="854" height="480" src="https://www.youtube.com/embed/etBE4_Ajt-w" frameborder="0" allowfullscreen></iframe>
+	<iframe width="854" height="480" src="https://www.youtube.com/embed/etBE4_Ajt-w" frameborder="2" allowfullscreen></iframe>
 	</div>
 
 <script>
