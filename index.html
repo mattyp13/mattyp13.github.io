@@ -3,12 +3,14 @@
 <head>
 <style>
 body {font-family: "Lato", sans-serif;}
-
+h.lucida {
+	font-family: "Lato", lucida handwriting;
+	}
 /* Style the tab */
 div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: #867979;
 }
 
 /* Style the buttons inside the tab */
@@ -19,13 +21,13 @@ div.tab button {
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    transition: 0.3s;
+    transition: 1s;
     font-size: 17px;
 }
 
 /* Change background color of buttons on hover */
 div.tab button:hover {
-    background-color: #ddd;
+    background-color: #ffffdd;
 }
 
 /* Create an active/current tablink class */
@@ -39,36 +41,58 @@ div.tab button.active {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+	 -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 2s;
+	text-align: center;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+h1{
+font-family: "Lato", lucida handwriting;
 }
 </style>
 </head>
-<body>
+<body background= 'grey back.png'>
 
-<p>Click on the buttons inside the tabbed menu:</p>
+<h1 class="lucida">Welcome To My Website</h1>
 
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  <button class="tablinks" onclick="openTab(event, 'Home')">About Me</button>
+  <button class="tablinks" onclick="openTab(event, 'Education')">Education</button>
+  <button class="tablinks" onclick="openTab(event, 'Projects')">Projects</button>
 </div>
 
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
+
+<div id="Home" class="tabcontent">
+  <h3>About Me</h3>
+  <p> <img src="front.jpg" alt="Front" width="147" height="246" /> </p>
+  <p>From Chesterfield Missouri</p>
 </div>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
+<div id="Education" class="tabcontent">
+  <h3>Education</h3>
+  <p> <img src = "ColumnsJesse_B.jpg" alt = "Education" width = "480" height ="175"/> </p>
+  <p>Went to Unviversity of Missouri and graduated May 2017 </br> Graduated with a Bachelors of Science in Computer Science and Information Technology </p> 
 </div>
 
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
+<div id="Projects" class="tabcontent">
+  <h3>Projects</h3>
+  <p>Autonomous Car</p>
+	<iframe width="854" height="480" src="https://www.youtube.com/embed/etBE4_Ajt-w" frameborder="0" allowfullscreen></iframe>
+	</div>
 
 <script>
-function openCity(evt, cityName) {
+function openTab(evt, tabInfo) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -78,7 +102,7 @@ function openCity(evt, cityName) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(tabInfo).style.display = "block";
     evt.currentTarget.className += " active";
 }
 </script>
