@@ -23,6 +23,18 @@ div.tab button {
     font-size: 17px;
 }
 
+.bg{
+	background-image: url("grey back.png");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background: cover;
+	
+	background-position: center;
+    background-size: cover;
+
+}
+
+
 /* Change background color of buttons on hover */
 div.tab button:hover {
     background-color: #ffffdd;
@@ -69,14 +81,16 @@ font-family: "Lato", lucida handwriting;
 }
 </style>
 </head>
-<body background= 'grey back.png'>
+<body class = bg background= 'grey back.png'>
+
+
 
 <!--header-->
 <header>
 <p id ='time' class = "timestyle" style="float:right;"> demo </p>
 <h1>Welcome To My Website </h1>
 </header>
-
+<div class="bg"></div>
 <script>
 document.getElementById("time").innerHTML = Date();
 </script>
